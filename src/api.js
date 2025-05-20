@@ -11,3 +11,9 @@ export const getArticles = () => {
 export const getArticleByArticleId = (articleId) => {
   return newsApi.get(`/articles/${articleId}`).then(({ data }) => data.article);
 };
+
+export const getCommentsByArticleId = (articleId) => {
+  return newsApi
+    .get(`/articles/${articleId}/comments`)
+    .then(({ data }) => data.comments);
+};
