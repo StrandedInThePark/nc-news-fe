@@ -18,3 +18,5 @@ export const CommentsList = ({ article_id }) => {
     </ul>
   );
 };
+
+//CHANGE ROUTE TO SOLO ARTICLE WHEN VIEWING COMMENTS??

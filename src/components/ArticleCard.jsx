@@ -28,10 +28,13 @@ export const ArticleCard = ({ article, idParam }) => {
         </p>
         <p className="article-list-votes"> Votes: {article.votes}</p>
         <Link className="article-card-link" to={"/" + article.article_id}>
-          Read more
+          Full article
         </Link>
+        <ViewCommentsButton
+          id="commentsButton"
+          article_id={article.article_id}
+        />
       </li>
-      <ViewCommentsButton article_id={article.article_id} />
     </>
   );
 };
