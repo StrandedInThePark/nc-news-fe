@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Articles />}></Route>
+        <Route path="/:article_id?" element={<Articles />}></Route>
         <Route path="/user" element={<User />}></Route>
       </Routes>
       <Footer />
