@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { ArticleCard } from "./ArticleCard";
 
-export const ArticleList = () => {
-  const [articles, setArticles] = useState([]);
-
-  return <p>article list</p>;
+export const ArticleList = ({ articles }) => {
+  return (
+    <>
+      <ul>
+        {articles.map((article) => {
+          return <ArticleCard article={article} />;
+        })}
+      </ul>
+    </>
+  );
 };
