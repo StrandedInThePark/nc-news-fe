@@ -47,3 +47,9 @@ export const getUser = (username) => {
 export const deleteComment = (commentId) => {
   return newsApi.delete(`/comments/${commentId}`).then(() => {});
 };
+
+export const getTopics = () => {
+  return newsApi.get("topics").then(({ data }) => {
+    return data.topics;
+  });
+};

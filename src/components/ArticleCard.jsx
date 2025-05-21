@@ -18,7 +18,6 @@ export const ArticleCard = ({ article, idParam }) => {
     <>
       <li className="articleListItem">
         <p className="article-list-title">{article.title}</p>
-
         <p className="article-list-author">Posted by {article.author}</p>
         <img className="article-list-image" src={article.article_img_url}></img>
         <p className="article-list-body-preview">

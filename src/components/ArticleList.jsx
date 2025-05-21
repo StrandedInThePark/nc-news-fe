@@ -1,11 +1,17 @@
 import { ArticleCard } from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { TopicFilter } from "./TopicFilter";
 
 export const ArticleList = ({ articles }) => {
   const { article_id } = useParams();
   const [idParam, setIdParam] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
+
+  //TOPICS FILTER PLAN
+  //get all topics api, map over, and generate buttons list
+  //when clicked, use e.target.innerText to Link to change route
+  //for route, filter the array by topic to set articles state again?
 
   useEffect(() => {
     setIdParam(null);
@@ -30,17 +36,20 @@ export const ArticleList = ({ articles }) => {
       {idParam ? (
         <ArticleCard article={currentArticle[0]} idParam={idParam} />
       ) : (
-        <ul className="articleList">
-          {articles.map((article) => {
-            return (
-              <ArticleCard
-                key={article.article_id}
-                article={article}
-                idParam={idParam}
-              />
-            );
-          })}
-        </ul>
+        <>
+          <TopicFilter />
+          <ul className="articleList">
+            {articles.map((article) => {
+              return (
+                <ArticleCard
+                  key={article.article_id}
+                  article={article}
+                  idParam={idParam}
+                />
+              );
+            })}
+          </ul>
+        </>
       )}
     </>
   );
