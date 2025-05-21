@@ -32,5 +32,3 @@ export const CommentCard = ({ comment, setComments, articleId }) => {
     </li>
   );
 };
-
-//replace button with component to handle click and delete
