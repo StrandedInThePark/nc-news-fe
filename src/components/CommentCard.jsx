@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { LoggedInUserContext } from "../contexts/LoggedInUser";
 import { useState, useEffect } from "react";
+import { DeleteCommentButton } from "./DeleteCommentButton";
 
-export const CommentCard = ({ comment }) => {
+export const CommentCard = ({ comment, setComments, articleId }) => {
   const { loggedInUser } = useContext(LoggedInUserContext);
   const [isCommentAuthorUser, setIsCommentAuthorUser] = useState(false);
 
@@ -14,12 +15,6 @@ export const CommentCard = ({ comment }) => {
     }
   }, [loggedInUser]);
 
-  console.log(
-    loggedInUser.username,
-    "logged in user",
-    comment.author,
-    "author log"
-  );
   return (
     <li className="commentCard">
       <p className="commentcard-header">
@@ -27,10 +22,15 @@ export const CommentCard = ({ comment }) => {
       </p>
       <p className="commentcard-votes">Votes: {comment.votes}</p>
       {isCommentAuthorUser ? (
-        <button className="commentcard-delbutton">Delete your comment</button>
+        <DeleteCommentButton
+          commentId={comment.comment_id}
+          setComments={setComments}
+          articleId={articleId}
+        />
       ) : null}
-
       <p className="commentcard-body">{comment.body}</p>
     </li>
   );
 };
+
+//replace button with component to handle click and delete

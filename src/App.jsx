@@ -13,8 +13,8 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   //hard-coded while there is no login or createaccount feature
   //would use path with param based on account login to fetch username and display details for that account
-  //using pre-existing account grumpy19
-  const hardCodedUser = "grumpy19";
+  //using pre-existing account
+  const hardCodedUser = "jessjelly";
   useEffect(() => {
     getUser(hardCodedUser).then((user) => {
       setLoggedInUser(user);

@@ -43,3 +43,7 @@ export const getUser = (username) => {
     return data.user;
   });
 };
+
+export const deleteComment = (commentId) => {
+  return newsApi.delete(`/comments/${commentId}`).then(() => {});
+};
