@@ -37,3 +37,9 @@ export const postComment = ([commentToPost, articleId]) => {
       return data.newComment;
     });
 };
+
+export const getUser = (username) => {
+  return newsApi.get(`/users/${username}`).then(({ data }) => {
+    return data.user;
+  });
+};

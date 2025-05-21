@@ -262,3 +262,7 @@ ul {
   border-top: solid 3px #053225;
   margin: 0px;
 }
+
+.profilePhoto {
+  height: 20vw;
+}

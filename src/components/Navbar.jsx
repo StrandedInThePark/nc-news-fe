@@ -6,8 +6,8 @@ export const Navbar = () => {
       <Link to="/" className="navlinks">
         Articles
       </Link>
-      <Link to="/user" className="navlinks">
-        User
+      <Link to="/User" className="navlinks">
+        User Account
       </Link>
     </nav>
   );
