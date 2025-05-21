@@ -30,7 +30,7 @@ export const ArticleList = ({ articles }) => {
       {idParam ? (
         <ArticleCard article={currentArticle[0]} idParam={idParam} />
       ) : (
-        <ul>
+        <ul className="articleList">
           {articles.map((article) => {
             return <ArticleCard article={article} idParam={idParam} />;
           })}
