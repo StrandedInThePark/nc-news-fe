@@ -27,6 +27,9 @@ h1 {
 nav {
   background-color: #3f7cac;
   color: white;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 20% 20% auto;
 }
 
 footer {
@@ -36,6 +39,14 @@ footer {
 
 .navlinks {
   padding: 5px;
+  text-align: center;
+}
+
+.loggedInNavMessage {
+  grid-column: 3;
+  text-align: end;
+  padding: 5px;
+  margin: 0px;
 }
 
 #loadingGif {
