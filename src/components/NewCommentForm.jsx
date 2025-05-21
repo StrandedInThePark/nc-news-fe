@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { postComment } from "../api";
+import { useContext } from "react";
+import { LoggedInUserContext } from "../contexts/LoggedInUser";
 
 export const NewCommentForm = ({ articleId }) => {
+  const { loggedInUser } = useContext(LoggedInUserContext);
   const [username, setUsername] = useState("");
   const [commentBody, setCommentBody] = useState("");
   const [missingInfo, setMissingInfo] = useState();
@@ -12,9 +15,12 @@ export const NewCommentForm = ({ articleId }) => {
   const [awaitingPost, setAwaitingPost] = useState(false);
 
   useEffect(() => {
+    setUsername(loggedInUser.username);
+  }, []);
+
+  useEffect(() => {
     setCommentToPost({
       username: username,
-      //   article_id: articleId,
       body: commentBody,
     });
   }, [username, commentBody]);
@@ -37,10 +43,10 @@ export const NewCommentForm = ({ articleId }) => {
       setAwaitingPost(true);
       postComment([commentToPost, articleId])
         .then((comment) => {
+          setErrorPostingComment(false);
           setAwaitingPost(false);
           setCommentIsPosted(true);
-          setErrorPostingComment(false);
-          setRenderComment(comment, "render log");
+          setRenderComment(comment);
         })
         .catch((err) => {
           setAwaitingPost(false);
@@ -49,7 +55,7 @@ export const NewCommentForm = ({ articleId }) => {
         });
     }
   }
-  console.log(renderComment);
+  //add default filled out box to be logged in username
   return (
     <>
       <form>
