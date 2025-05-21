@@ -1,15 +1,20 @@
 import { ArticleList } from "./ArticleList";
 import { getArticles } from "../api";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router";
 import loading from "../assets/images/newspaperloading.gif";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const topicQuery = searchParams.get("topic");
+
+  //Add a button to clear topicQuery, as an alternative to clicking articles to reset?
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles()
+    getArticles(topicQuery)
       .then((result) => {
         setArticles(result);
         setIsLoading(false);
@@ -17,7 +22,7 @@ export const Articles = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [topicQuery]);
 
   return (
     <>

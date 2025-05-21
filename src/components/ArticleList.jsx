@@ -8,11 +8,6 @@ export const ArticleList = ({ articles }) => {
   const [idParam, setIdParam] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
 
-  //TOPICS FILTER PLAN
-  //get all topics api, map over, and generate buttons list
-  //when clicked, use e.target.innerText to Link to change route
-  //for route, filter the array by topic to set articles state again?
-
   useEffect(() => {
     setIdParam(null);
     if (article_id) {

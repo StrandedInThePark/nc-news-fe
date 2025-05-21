@@ -4,9 +4,6 @@ import { Link } from "react-router";
 
 export const TopicFilter = () => {
   const [topicList, setTopicList] = useState([]);
-  //   function handleClick(e) {
-  //     e.preventDefault();
-  //   }
 
   useEffect(() => {
     getTopics().then((topics) => {
