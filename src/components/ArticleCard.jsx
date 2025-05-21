@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router";
 import { ViewCommentsButton } from "./ViewCommentsButton";
+import { ArticleVotes } from "./ArticleVotes";
 
 export const ArticleCard = ({ article, idParam }) => {
   const [body, setBody] = useState("");
@@ -26,7 +27,7 @@ export const ArticleCard = ({ article, idParam }) => {
         <Link className="article-card-link" to={"/" + article.article_id}>
           Full article
         </Link>
-        <p className="article-list-votes"> Votes: {article.votes}</p>
+        <ArticleVotes initialVotes={article.votes} />
         <ViewCommentsButton
           id="commentsComponent"
           article_id={article.article_id}

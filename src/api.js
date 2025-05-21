@@ -17,3 +17,15 @@ export const getCommentsByArticleId = (articleId) => {
     .get(`/articles/${articleId}/comments`)
     .then(({ data }) => data.comments);
 };
+
+export const patchArticleUpvote = (articleId) => {
+  return newsApi
+    .patch(`articles/${articleId}`, { inc_votes: 1 })
+    .then(() => {});
+};
+
+export const patchArticleDownvote = (articleId) => {
+  return newsApi
+    .patch(`articles/${articleId}`, { inc_votes: -1 })
+    .then(() => {});
+};

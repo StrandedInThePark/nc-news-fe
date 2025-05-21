@@ -7,12 +7,11 @@
 
 /* * {
   outline: red 1px solid;
-}
+} */
 li {
   outline: blue 1px solid;
-} */
-
-a {
+}
+*/ a {
   text-decoration: none;
 }
 
@@ -26,12 +25,12 @@ h1 {
 }
 
 nav {
-  background-color: #cebebe;
+  background-color: #3f7cac;
   color: white;
 }
 
 footer {
-  background-color: #6d2e46;
+  background-color: #a26769;
   color: #ece2d0;
 }
 
@@ -191,11 +190,15 @@ ul {
 } */
 
 .commentcard-body {
+  grid-column: 1 / 3;
+
   margin: 0px;
   padding: 0px;
 }
 
 .commentcard-header {
+  grid-column: 1 / 3;
+
   margin: 0px;
   padding: 0px;
 }
