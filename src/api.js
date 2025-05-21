@@ -29,3 +29,11 @@ export const patchArticleDownvote = (articleId) => {
     .patch(`articles/${articleId}`, { inc_votes: -1 })
     .then(() => {});
 };
+
+export const postComment = ([commentToPost, articleId]) => {
+  return newsApi
+    .post(`articles/${articleId}/comments`, commentToPost)
+    .then(({ data }) => {
+      return data.newComment;
+    });
+};

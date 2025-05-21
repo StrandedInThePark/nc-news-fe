@@ -16,7 +16,7 @@ export const ArticleCard = ({ article, idParam }) => {
 
   return (
     <>
-      <li key={article.article_id}>
+      <li className="articleListItem" key={article.article_id}>
         <p className="article-list-title">{article.title}</p>
 
         <p className="article-list-author">Posted by {article.author}</p>

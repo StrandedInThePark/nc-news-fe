@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCommentsByArticleId } from "../api";
 import { CommentCard } from "./CommentCard";
+import { NewCommentButton } from "./NewCommentButton";
 export const CommentsList = ({ article_id }) => {
   const [comments, setComments] = useState([]);
 
@@ -11,12 +12,11 @@ export const CommentsList = ({ article_id }) => {
   }, []);
 
   return (
-    <ul>
+    <ul className="commentsUlList">
+      <NewCommentButton articleId={article_id} />
       {comments.map((comment) => {
         return <CommentCard comment={comment} />;
       })}
     </ul>
   );
 };
-
-//Might change routes when clicking comments show it only shows a solo article?
