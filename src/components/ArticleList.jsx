@@ -32,7 +32,13 @@ export const ArticleList = ({ articles }) => {
       ) : (
         <ul className="articleList">
           {articles.map((article) => {
-            return <ArticleCard article={article} idParam={idParam} />;
+            return (
+              <ArticleCard
+                key={article.article_id}
+                article={article}
+                idParam={idParam}
+              />
+            );
           })}
         </ul>
       )}

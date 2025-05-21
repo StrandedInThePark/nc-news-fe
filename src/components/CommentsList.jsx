@@ -15,7 +15,7 @@ export const CommentsList = ({ article_id }) => {
     <ul className="commentsUlList">
       <NewCommentButton articleId={article_id} />
       {comments.map((comment) => {
-        return <CommentCard comment={comment} />;
+        return <CommentCard key={comment.created_at} comment={comment} />;
       })}
     </ul>
   );
