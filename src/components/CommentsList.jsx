@@ -19,4 +19,4 @@ export const CommentsList = ({ article_id }) => {
   );
 };
 
-//CHANGE ROUTE TO SOLO ARTICLE WHEN VIEWING COMMENTS??
+//Might change routes when clicking comments show it only shows a solo article?

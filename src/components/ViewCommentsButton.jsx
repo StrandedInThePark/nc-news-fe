@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { CommentsList } from "./CommentsList.jsx";
 
-export const ViewCommentsButton = ({ article_id }) => {
+export const ViewCommentsButton = ({ article_id, commentCount }) => {
   const [showComments, setShowComments] = useState(false);
-  const [buttonText, setButtonText] = useState("Show comments");
+  const [buttonText, setButtonText] = useState(
+    `Show comments (${commentCount})`
+  );
+
   function handleClick(e) {
     e.preventDefault();
     if (showComments === true) {
-      setButtonText("Show comments");
+      setButtonText(`Show comments (${commentCount})`);
       setShowComments(false);
     } else {
       setButtonText("Hide comments");

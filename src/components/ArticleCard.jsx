@@ -21,18 +21,16 @@ export const ArticleCard = ({ article, idParam }) => {
         <p className="article-list-author">Posted by {article.author}</p>
         <img className="article-list-image" src={article.article_img_url}></img>
         <p className="article-list-body-preview">
-          {idParam ? body : body.substring(0, 200) + "..."}
+          {idParam ? body : body.substring(0, 100) + "..."}
         </p>
-        <p className="article-list-comments">
-          Comments: {article.comment_count}
-        </p>
-        <p className="article-list-votes"> Votes: {article.votes}</p>
         <Link className="article-card-link" to={"/" + article.article_id}>
           Full article
         </Link>
+        <p className="article-list-votes"> Votes: {article.votes}</p>
         <ViewCommentsButton
-          id="commentsButton"
+          id="commentsComponent"
           article_id={article.article_id}
+          commentCount={article.comment_count}
         />
       </li>
     </>
