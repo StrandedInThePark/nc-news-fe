@@ -404,3 +404,13 @@ ul {
 .profilePhoto {
   height: 20vw;
 }
+
+.pageError {
+  border: solid 5px #2a2b2a;
+  background-color: #ece2d0;
+  width: 40vw;
+  height: 30vw;
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+}
