@@ -50,7 +50,6 @@ export const NewCommentForm = ({ articleId }) => {
         })
         .catch((err) => {
           setAwaitingPost(false);
-          console.log(err, "error log");
           setErrorPostingComment(true);
         });
     }

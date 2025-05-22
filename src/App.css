@@ -21,15 +21,20 @@ body {
 }
 
 h1 {
-  background-color: #a26769;
+  background-color: #2a2b2a;
+  color: #ece2d0;
+  padding: 1rem;
+  margin: 0;
 }
 
 nav {
-  background-color: #3f7cac;
+  background-color: #a26769;
   color: white;
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 20% 20% auto;
+  grid-template-columns: 8rem 8rem auto;
+  margin: 0px;
+  padding: 0.5rem;
 }
 
 footer {
@@ -39,7 +44,7 @@ footer {
 
 .navlinks {
   padding: 5px;
-  text-align: center;
+  text-align: left;
 }
 
 .loggedInNavMessage {
@@ -195,6 +200,7 @@ ul {
   .commentsButton {
     grid-row: 6/7;
     grid-column: 1 / 3;
+    width: 100%;
   }
 }
 
@@ -225,12 +231,21 @@ ul {
 
 /* comment cards above mobile size */
 @media (min-width: 650px) {
-  .commentCard {
-    /* outline: solid green 1px; */
+  .commentsUlList {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto;
     grid-template-rows: auto auto auto;
-    width: 100%;
+    grid-column: 1 / 3;
+    outline: solid green 1px;
+    width: 90%;
+    padding: 5px;
+    margin: 5px;
+  }
+  .commentCard {
+    /* display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto; */
+    max-width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }

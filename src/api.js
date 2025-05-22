@@ -8,7 +8,6 @@ export const getArticles = (topicQuery) => {
   return newsApi
     .get("/articles", { params: { topic: topicQuery } })
     .then(({ data }) => {
-      console.log(data);
       return data.articles;
     });
 };
