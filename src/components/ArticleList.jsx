@@ -1,7 +1,7 @@
 import { ArticleCard } from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { TopicFilter } from "./TopicFilter";
+import { Filters } from "./Filters";
 
 export const ArticleList = ({ articles }) => {
   const { article_id } = useParams();
@@ -32,7 +32,7 @@ export const ArticleList = ({ articles }) => {
         <ArticleCard article={currentArticle[0]} idParam={idParam} />
       ) : (
         <>
-          <TopicFilter />
+          <Filters />
           <ul className="articleList">
             {articles.map((article) => {
               return (

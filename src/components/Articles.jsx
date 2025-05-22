@@ -9,33 +9,35 @@ export const Articles = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
   const topicQuery = searchParams.get("topic");
+  const sortQuery = searchParams.get("sort_by");
+  const orderQuery = searchParams.get("order");
 
-  //Add a button to clear topicQuery, as an alternative to clicking articles to reset?
+  //Add a button to clear all queries, as an alternative to clicking articles to reset?
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles(topicQuery)
+    getArticles(topicQuery, sortQuery, orderQuery)
       .then((result) => {
         setArticles(result);
         setIsLoading(false);
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [topicQuery]);
+      .catch((err) => {});
+  }, [topicQuery, sortQuery, orderQuery]);
 
   return (
     <>
-      <h2>Articles</h2>
+      <div className="filterAndArticlesContainer">
+        <h2>Articles</h2>
 
-      {isLoading ? (
-        <>
-          <img src={loading} alt="newspaper loading" id="loadingGif"></img>
-          <p id="loadingText">Loading...</p>
-        </>
-      ) : (
-        <ArticleList articles={articles} />
-      )}
+        {isLoading ? (
+          <>
+            <img src={loading} alt="newspaper loading" id="loadingGif"></img>
+            <p id="loadingText">Loading...</p>
+          </>
+        ) : (
+          <ArticleList className="articleListColumnSet" articles={articles} />
+        )}
+      </div>
     </>
   );
 };
