@@ -8,6 +8,7 @@ import { User } from "./components/User";
 import { useState, useEffect } from "react";
 import { LoggedInUserContext } from "./contexts/LoggedInUser";
 import { getUser } from "./api";
+import { Error } from "./components/Error";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
@@ -16,9 +17,11 @@ function App() {
   //using pre-existing account
   const hardCodedUser = "jessjelly";
   useEffect(() => {
-    getUser(hardCodedUser).then((user) => {
-      setLoggedInUser(user);
-    });
+    getUser(hardCodedUser)
+      .then((user) => {
+        setLoggedInUser(user);
+      })
+      .catch((err) => {});
   }, []);
 
   return (
@@ -29,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/:article_id?" element={<Articles />}></Route>
           <Route path="/user" element={<User />}></Route>
+          <Route path="/*" element={<Error />}></Route>
         </Routes>
         <Footer />
       </>

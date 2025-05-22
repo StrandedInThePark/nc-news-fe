@@ -3,6 +3,9 @@ import { getArticles } from "../api";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
 import loading from "../assets/images/newspaperloading.gif";
+import { getArticleByArticleId } from "../api";
+import { Error } from "./Error";
+import { useParams } from "react-router";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -11,8 +14,21 @@ export const Articles = () => {
   const topicQuery = searchParams.get("topic");
   const sortQuery = searchParams.get("sort_by");
   const orderQuery = searchParams.get("order");
+  const { article_id } = useParams();
+  const [error, setError] = useState(null);
 
-  //Add a button to clear all queries, as an alternative to clicking articles to reset?
+  useEffect(() => {
+    if (article_id) {
+      getArticleByArticleId(article_id)
+        .then(() => {})
+        .catch((err) => {
+          setError({
+            status: err.response?.status,
+            msg: err.response?.data?.msg,
+          });
+        });
+    }
+  }, [article_id]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -28,8 +44,9 @@ export const Articles = () => {
     <>
       <div className="filterAndArticlesContainer">
         <h2>Articles</h2>
-
-        {isLoading ? (
+        {error ? (
+          <Error />
+        ) : isLoading ? (
           <>
             <img src={loading} alt="newspaper loading" id="loadingGif"></img>
             <p id="loadingText">Loading...</p>

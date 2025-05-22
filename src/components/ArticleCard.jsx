@@ -9,10 +9,12 @@ export const ArticleCard = ({ article, idParam }) => {
   const [body, setBody] = useState("");
 
   useEffect(() => {
-    getArticleByArticleId(article.article_id).then((article) => {
-      setBody(article.body);
-    });
-  }, []);
+    getArticleByArticleId(article.article_id)
+      .then((article) => {
+        setBody(article.body);
+      })
+      .catch((err) => {});
+  }, [article.article_id]);
 
   return (
     <>

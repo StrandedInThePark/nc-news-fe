@@ -24,6 +24,7 @@ export const getCommentsByArticleId = (articleId) => {
     .then(({ data }) => data.comments);
 };
 
+//combine upvote and downvote patch into one
 export const patchArticleUpvote = (articleId) => {
   return newsApi
     .patch(`articles/${articleId}`, { inc_votes: 1 })
