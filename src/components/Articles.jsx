@@ -61,7 +61,7 @@ export const Articles = () => {
       <div className="filterAndArticlesContainer">
         <h2>Articles</h2>
         {error ? (
-          <Error />
+          <Error status={error.status} msg={error.msg} />
         ) : isLoading ? (
           <>
             <img src={loading} alt="newspaper loading" id="loadingGif"></img>
