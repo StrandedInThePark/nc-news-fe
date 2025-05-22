@@ -60,3 +60,7 @@ export const getTopics = () => {
     return data.topics;
   });
 };
+
+export const getTopicBySlug = (topicSlug) => {
+  return newsApi.get(`topics/${topicSlug}`).then(({ data }) => {});
+};

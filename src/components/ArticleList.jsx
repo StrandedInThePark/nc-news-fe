@@ -2,28 +2,11 @@ import { ArticleCard } from "./ArticleCard";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Filters } from "./Filters";
-import { getArticleByArticleId } from "../api";
-import { Error } from "./Error";
 
 export const ArticleList = ({ articles }) => {
   const { article_id } = useParams();
   const [idParam, setIdParam] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    if (article_id) {
-      getArticleByArticleId(article_id)
-        .then(() => {})
-        .catch((err) => {
-          setError({
-            status: err.response.status,
-            msg: err.response.data.msg,
-          });
-          console.log(error);
-        });
-    }
-  }, [article_id]);
 
   useEffect(() => {
     setIdParam(null);

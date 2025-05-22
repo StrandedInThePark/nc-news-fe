@@ -6,6 +6,7 @@ import loading from "../assets/images/newspaperloading.gif";
 import { getArticleByArticleId } from "../api";
 import { Error } from "./Error";
 import { useParams } from "react-router";
+import { getTopicBySlug } from "../api";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -17,6 +18,7 @@ export const Articles = () => {
   const { article_id } = useParams();
   const [error, setError] = useState(null);
 
+  //check if article_id is valid
   useEffect(() => {
     if (article_id) {
       getArticleByArticleId(article_id)
@@ -29,6 +31,20 @@ export const Articles = () => {
         });
     }
   }, [article_id]);
+
+  //check if topic is valid
+  useEffect(() => {
+    if (topicQuery) {
+      getTopicBySlug(topicQuery)
+        .then(() => {})
+        .catch((err) => {
+          setError({
+            status: err.response?.status,
+            msg: err.response?.data?.msg,
+          });
+        });
+    }
+  }, [topicQuery]);
 
   useEffect(() => {
     setIsLoading(true);
