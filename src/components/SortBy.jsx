@@ -3,10 +3,6 @@ import { useQueryUpdate } from "../hooks/UseQueryUpdate";
 export const SortBy = () => {
   const updateQuery = useQueryUpdate();
 
-  //   function onClick(e) {
-  //     e.preventDefault();
-  //   }
-
   return (
     <>
       <button
