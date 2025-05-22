@@ -409,8 +409,19 @@ ul {
   border: solid 5px #2a2b2a;
   background-color: #ece2d0;
   width: 40vw;
-  height: 30vw;
+  height: 20vw;
   text-align: center;
   padding: 30px;
   margin: 30px;
+}
+@media (max-width: 649px) {
+  .pageError {
+    border: solid 5px #2a2b2a;
+    background-color: #ece2d0;
+    width: 40vw;
+    height: 70vw;
+    text-align: center;
+    padding: 30px;
+    margin: 30px;
+  }
 }
