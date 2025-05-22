@@ -7,10 +7,10 @@ export const Navbar = () => {
   return (
     <nav>
       <Link to="/" className="navlinks">
-        Articles
+        <button>Articles</button>
       </Link>
       <Link to="/User" className="navlinks">
-        User Account
+        <button>User Account</button>
       </Link>
       {loggedInUser ? (
         <p className="loggedInNavMessage">

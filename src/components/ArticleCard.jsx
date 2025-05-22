@@ -18,7 +18,9 @@ export const ArticleCard = ({ article, idParam }) => {
     <>
       <li className="articleListItem">
         <p className="article-list-title">{article.title}</p>
-        <p className="article-list-author">Posted by {article.author}</p>
+        <p className="article-list-author">
+          Posted by {article.author} on {article.created_at.substring(0, 10)}
+        </p>
         <img className="article-list-image" src={article.article_img_url}></img>
         <p className="article-list-body-preview">
           {idParam ? body : body.substring(0, 100) + "..."}
