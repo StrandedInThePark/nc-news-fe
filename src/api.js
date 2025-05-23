@@ -6,7 +6,7 @@ const newsApi = axios.create({
 
 export const getArticles = (topicQuery, sortQuery, orderQuery) => {
   return newsApi
-    .get("/articles", {
+    .get("/articles?limit=100", {
       params: { topic: topicQuery, sort_by: sortQuery, order: orderQuery },
     })
     .then(({ data }) => {
