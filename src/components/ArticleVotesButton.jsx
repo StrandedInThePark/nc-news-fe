@@ -24,8 +24,12 @@ export const ArticleVotesButton = ({ newVotes, setNewVotes, article_id }) => {
   }
   return (
     <>
-      <button onClick={handleUpvoteClick}>Upvote</button>
-      <button onClick={handleDownvoteClick}>Downvote</button>
+      <button className="votesButton" onClick={handleUpvoteClick}>
+        Upvote
+      </button>
+      <button className="votesButton" onClick={handleDownvoteClick}>
+        Downvote
+      </button>
       {isPatchError ? <p>Sorry, something went wrong!</p> : null}
     </>
   );

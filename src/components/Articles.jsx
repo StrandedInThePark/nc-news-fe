@@ -59,7 +59,7 @@ export const Articles = () => {
   return (
     <>
       <div className="filterAndArticlesContainer">
-        <h2>Articles</h2>
+        <h2 className="articlesheading"> Articles</h2>
         {error ? (
           <Error status={error.status} msg={error.msg} />
         ) : isLoading ? (

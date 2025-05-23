@@ -1,3 +1,3 @@
 export const Footer = () => {
-  return <footer> placeholder, copyright, links </footer>;
+  return <footer> Copyright &#169; 2025 </footer>;
 };
