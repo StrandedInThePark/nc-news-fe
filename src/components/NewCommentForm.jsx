@@ -92,8 +92,8 @@ export const NewCommentForm = ({ articleId }) => {
         ) : null}
         {errorPostingComment ? (
           <p className="formErrorText">
-            We're sorry, there was a problem posting your comment. Check your
-            author exists!
+            We're sorry, there was a problem posting your comment. Make sure you
+            are logged in as your Username!
           </p>
         ) : null}
       </form>
