@@ -1,12 +1,53 @@
-# React + Vite
+# The Newist
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repo is deployed here (it may take a minute to load while the server spins up):
+[The Newist](https://the-newist.netlify.app)
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application is a news website developed using React.
 
-## Expanding the ESLint configuration
+- Users can view articles, post comments, delete their own comments, and upvote/downvote articles.
+- Article filter and sort features are also included.
+- The existence of users is currently hard-coded to simulate being logged in as a specific user.
+- It makes use of the back-end server and database available here: [Back-end](https://github.com/StrandedInThePark/news-backend.git)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Running this project yourself locally
+
+Clone this repo in your CLI using:
+
+```
+git clone https://github.com/StrandedInThePark/nc-news-fe.git
+```
+
+Navigate into the project folder:
+
+```
+cd nc-news-fe
+```
+
+Install all dependencies:
+
+```
+npm i
+```
+
+You can then run this in a dev environment locally using:
+
+```
+npm run dev
+```
+
+enabling you to alter the code, and see the changes at the localhost url.
+
+---
+
+> [!NOTE]
+>
+> ### To run this project on your local machine:
+>
+> - You should have Node.js version `22.13.1` installed as a minimum.
+
+---
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
