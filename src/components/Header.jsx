@@ -1,3 +1,9 @@
+import { Link } from "react-router";
+
 export const Header = () => {
-  return <h1>The Newist</h1>;
+  return (
+    <Link to="/">
+      <h1>The Newist</h1>
+    </Link>
+  );
 };
