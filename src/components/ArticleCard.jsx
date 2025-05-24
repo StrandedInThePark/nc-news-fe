@@ -33,9 +33,12 @@ export const ArticleCard = ({ article, idParam }) => {
         <p className="article-list-body-preview">
           {idParam ? body : body.substring(0, 100) + "..."}
         </p>
-        <Link className="article-card-link" to={"/" + article.article_id}>
-          Full article
-        </Link>
+        {idParam ? null : (
+          <Link className="article-card-link" to={"/" + article.article_id}>
+            Full article
+          </Link>
+        )}
+
         <ArticleVotes initialVotes={article.votes} />
         <ViewCommentsButton
           id="commentsComponent"
